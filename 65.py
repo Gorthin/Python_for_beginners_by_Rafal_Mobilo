@@ -1,27 +1,17 @@
-CountryLeaders = {'PL':'Duda', 'US':'Trump'}
+marketing=['loyality program','client promotion','market research']
+print(marketing)
 
-#print(CountryLeaders['US'])
-CountryLeaders['DE'] = 'Merkel'
+marketing.append('public relations')
+print(marketing)
+print(marketing[3])
+marketing.insert(2, 'investors relations')
+print(marketing)
 
-#print(CountryLeaders.keys())
-#print(CountryLeaders.values())
-#print(CountryLeaders.items())
+emailMarketing = marketing.copy()
+emailMarketing.sort()
+internalEmails = ['internal communication']
+emailMarketing.extend(internalEmails)
+print(emailMarketing)
 
-#print(CountryLeaders.popitem())
-
-#print(CountryLeaders.setdefault('FR', 'Macron'))
-
-#print(CountryLeaders.get('RU'))
-
-print(CountryLeaders)
-
-
-NewLeaders = {'RU':'Putin', 'DE':'Schulz'}
-print(NewLeaders)
-CountryLeaders.update(NewLeaders)
-
-
-
-
-print(CountryLeaders)
-                  
+NewEmailMarketing = tuple(emailMarketing)
+print(NewEmailMarketing)

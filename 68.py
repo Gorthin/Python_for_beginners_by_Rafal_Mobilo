@@ -1,20 +1,9 @@
-age = 27
-
-if  age >= 18:
-    print("You are adult an you can buy alcohol")
-else:
-    print("You are too young to buy alcohol")
-
-isDrunk = False
-
-if  age >= 18 and not isDrunk:
-    print("You are adult an you can buy alcohol")
-else:
-    print("Sorry, we cannot sell you alcohol")
-
-isRestrictedArea = False
-
-if  age >= 18 and not isDrunk and not isRestrictedArea:
-    print("You are adult an you can buy alcohol")
-else:
-    print("Sorry, we cannot sell you alcohol")
+chanels={'Google':1480,'Email':300,'Natural Traffic':440,'TV Spot':700}
+print (chanels)
+print(chanels['Email'])
+chanelsUpdate={'Natural Traffic':520,'News':600}
+chanels.update(chanelsUpdate)
+print(chanels)
+print(chanels.keys())
+print(chanels.pop('Email'))
+print(chanels)

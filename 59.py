@@ -1,21 +1,19 @@
-countries = ['FR', 'US', 'DE', 'RU']
-countries[1]='GB'
-print(countries[1])
-countries.append('PL')
-countries.insert(2, 'ES')
-countries.remove('RU')
-countries.sort()
-countries.reverse()
-print(countries.pop(2))
-print(countries.index('PL'))
-#print(countries.index('US'))
-print(countries.count('DE'))
+shoesize = 43
+birth = 1988
+number = (shoesize*5 +50)*20 + 1017 - birth
+print('shoe size is:',number //100)
+print('birth date is:',number %100)
 
-newList = ['FI', 'SE']
-countries.extend(newList)
+x = 678
+print('This should be 5: ', (x*2+10)/2-x)
 
-countriesCopy = countries.copy()
-countriesCopy.clear()
-
-print(countries)
-print(countriesCopy)
+presence = 0.85
+note = 3.5
+finalWork = False
+print('you need to be present and have good notes or do the final work',presence >=0.8 and note >=3 or finalWorkOK)
+print('you need to be present and have good notes and do the final work',presence >=0.8 and note >=3 and finalWorkOK)
+presence = 0.4
+note =2.5
+finalWorkOK = True
+print('you need to be present and have good notes or do the final work',presence >=0.8 and note >=3 or finalWorkOK)
+print('you need to be present and have good notes and do the final work',presence >=0.8 and note >=3 and finalWorkOK)

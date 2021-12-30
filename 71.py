@@ -1,29 +1,30 @@
-# metoda gorsza
+min_likes = 500
+min_shares = 100
+num_likes = 1000
+num_shares = 300
 
-age = 22
-isDrunk = True
-isRestrictedArea = False
-
-if  age < 18:
-    print("You are too young and you cannot buy alcohol")
+if num_likes > min_likes and num_shares > min_shares:
+    print('Today w have a 10% salary!!!')
 else:
-    if isDrunk:
-        print("Are you drunk? We cannot sell you alcohol")
-    else:
-        if isRestrictedArea:
-            print("Restricted Area. Alcohol is forbidden")
-        else:
-            print("Ok, you can buy alcohol")
+    print('Sorry, we need more likes and shares!')
 
-print("-----------------------")
+print('#2')
+isPizzaOrdered = True
+isDrinkOrdered = True
+isWeekend = True
 
-if age < 18:
-    print("You are too young and you cannot buy alcohol")
-elif isDrunk:
-    print("Are you drunk? We cannot sell you alcohol")
-elif isRestrictedArea:
-    print("Restricted Area. Alcohol is forbidden")
+if (isPizzaOrdered or isDrinkOrdered) and not isWeekend:
+    print('You have a extra coupon!')
 else:
-     print("Ok, you can buy alcohol")
+    print('Sorry try again!')
 
-print("-----------------------")
+print('#3')
+discSize = 100
+discUsedSized = 70
+fileSize = 40
+
+if (discSize - discUsedSized) > fileSize:
+    print('You can be downloaded')
+else:
+    print('You can\'t be downloaded')
+

@@ -1,18 +1,16 @@
-s="A Python script"
-print(s[0])
-print(s[2])
-print(s[2:7])
-print(s[2:8])
-print(s[:8])
-print(s[8:])
-print(s[2:999])
-print(s[222:999])
+v1 = 126
+v2 = '126'
+v3 = 126.0
+v4 = '126.0'
 
-message = 'Document "cv.doc" was printed on printer: XEROX'
-print(message.find(':'))
-print(message[message.find(':')+2:])
+print(v1, type(v1))
+print(v2, type(v2))
+print(v3, type(v3))
+print(v4, type(v4))
 
-print(message[message.find('"')+1:])
+print(v1+v3, type(v1+v3))
+print(v2+v4, type(v2+v4))
 
-tmp = message[message.find('"')+1:]
-print(tmp[:tmp.find('"')])
+print(7-1*0+3+3)
+print(4**5/2**3)
+print(99+9/9)
