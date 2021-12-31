@@ -1,20 +1,40 @@
-cargo = [40,20,4,5,30,8,2,7,3,19,32,40,20,35,15,32,9]
-cargo.sort()
-cargo.reverse()
-print("This is a cargo", cargo)
+number = 1
+previousNumber = 0
 
-boxCapacity = 90
-box = []
-i = 0
+while number <= 50:
+    print("Add", number, "and", previousNumber, "is",number + previousNumber)
+    previousNumber = number
+    number+=1
 
-while i<len(cargo) and (boxCapacity - sum(box)) >= min(cargo):
-    if (boxCapacity - sum(box)) >= cargo[i]:
-        box.append(cargo[i])
-    i+=1
+print('---------------')
 
+import random
+my_number = random.randint(0,20)
+guess = -1
+print("Guess my number")
+while guess != my_number:
+    guess = int(input())
+    if guess == my_number:
+        print("Congratulation. This is my number!")
+    elif guess > my_number:
+        print("Sorry - my number is smaller than your guess. Try again")
+    else:
+        print("Sorry - my number is greater3 than your guess. Try again")
 
+print('---------------')
 
-
-
-print("The collected items sum is: ", sum(box))
-print("The elements are: ", box)
+import random
+my_number = random.randint(0,20)
+trials = 0
+guess = -1
+print("Guess my number")
+while guess != my_number:
+    guess = int(input())
+    trials+=1
+    if guess == my_number:
+        print("Congratulation. This is my number!")
+    elif guess > my_number:
+        print("Sorry - my number is smaller than your guess. Try again")
+    else:
+        print("Sorry - my number is greater than your guess. Try again")
+    print(trials)
