@@ -1,25 +1,18 @@
-f_smaller = 3.141592653589793
-f_bigger = 3.87756392764
+import statistics
+percent = [2.606255012,1.222935044,1.283079391,3.628708901,6.856455493,4.911788292,
+           2.886928629,0.781876504,0.962309543,2.265437049,6.816359262,3.688853248,
+           3.468323978,5.633520449,4.530874098,1.984763432,0.922213312,3.327987169,
+           4.190056135,5.493183641,1.864474739,10.60545309,2.425821973,2.726543705,
+           8.740978348,6.174819567]
 
-import math
+percent.sort()
+print(percent)
+print(statistics.median(percent))
+print(statistics.median_low(percent))
+print(statistics.median_high(percent))
 
-print(math.ceil(f_smaller), math.ceil(f_bigger))
-print("\n")
+from statistics import *
 
-print(math.floor(f_smaller), math.floor(f_bigger))
-print("\n")
-
-print(math.ceil(-f_smaller), math.ceil(-f_bigger))
-print("\n")
-
-print(math.floor(-f_smaller), math.floor(-f_bigger))
-print("\n")
-
-print(pow(2,8), pow(9,0.5))
-print("\n")
-
-print(math.pi, math.e)
-print("\n")
-
-print(math.sin(math.pi/2), math.cos(math.pi/4))
-print("\n")
+print(median(percent))
+print(median_low(percent))
+print(median_high(percent))

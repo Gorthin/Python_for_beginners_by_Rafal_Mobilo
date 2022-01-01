@@ -1,11 +1,19 @@
-#for i in range(32,127):
- #   print(i, chr(i))
 import random
 
-ints = range(33, 127)
-password = ''
+for i in range(10):
+    print(random.randint(1,100))
 
-for i in range(16):
-    password += chr(random.choice(ints))
+print("===============")
 
-print("Password is:", password)
+number1 = random.randint(1,100)
+print("First number generated is %d" %(number1))
+
+counter = 1
+number2 = random.randint(1,100)
+
+while number2 != number1:
+    counter+=1
+    number2=random.randint(1,100)
+    print(counter,number2)
+
+print("I needed %d attpempts to generate %d again" % (counter, number1))
