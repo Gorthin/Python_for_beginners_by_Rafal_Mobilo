@@ -1,29 +1,59 @@
-from datetime import date
-from datetime import timedelta
+#!/usr/bin/python3
 
+def PrintAnimal(animal=''):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
 
-def GiveWorkingDay(year=date.today().year,\
-                   month=date.today().month,\
-                   day=date.today().day):
-    #prints the nearest working day
-  
-
-    #day = date.today()
-    day = date(year,month,day)
-
-    if day.weekday() == 5:
-        workingday = day + timedelta(days=2)
-    elif day.weekday() == 6:
-        workingday = day + timedelta(days=1)
+    if animal == 'cat':
+        print(txt_cat)
+    elif animal == 'bear':
+        print(txt_bear)
+    elif animal == 'bat':
+        print(txt_bat)
     else:
-        workingday = day
+        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
 
-    return workingday
+    return
 
-nextworkingday = GiveWorkingDay(2017,9,2)
-print('Next working day after',2017,9,2,'is',nextworkingday)
+PrintAnimal('cat')
+PrintAnimal(animal='bear')
+PrintAnimal(animal='bat')
+PrintAnimal('unicorn')
+PrintAnimal()
 
-nextworkingday = GiveWorkingDay()
-print('Next working day after is',nextworkingday)
+#2
 
-print('Next working day after is',GiveWorkingDay())
+from datetime import date
+def DaysToEndOfYear(year = date.today().year,
+                    month = date.today().month,
+                    day = date.today().day):
+
+    date_today = date(year, month, day)
+    date_end_year = date(year, 12, 31)
+    delta = date_end_year - date_today
+    print('Counting from ', date_today, 'days remaining', delta.days)
+
+DaysToEndOfYear(2020, 12, 20)
+DaysToEndOfYear(day=23, month=12, year=2023)
+DaysToEndOfYear()
+DaysToEndOfYear(year=2020)
+DaysToEndOfYear(year=2020, month=10)
+DaysToEndOfYear(day=1)

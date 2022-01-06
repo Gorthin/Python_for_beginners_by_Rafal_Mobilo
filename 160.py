@@ -1,37 +1,59 @@
-# tak jak poniżej to nie działą switch
-#function(argument){
-    #switch(argument){
-        #case 0:
-         #   return "lundi";
-        #case 1:
-         #   return "mardi";
-        #case 2:
-         #   return "mercredi";
-        #case 3:
-         #   return "jeudi";
-        #case 4:
-        #    return "vendredi";
-       # case 5:
-      #      return "samedi";
-     #   case 6:
-    #        return "dimanche";
-   #     default:
-  #          return "error";
- #   };
-#};
-        
-def WeekDayInFrench(dayNumber):
+#!/usr/bin/python3
 
-    names = {
-        0: "lundi",
-        1: "mardi",
-        2: "mercredi",
-        3: "jeudi",
-        4: "vendredi",
-        5: "samedi",
-        6: "dimanche",
-    }
+def PrintAnimal(*animals):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
 
-    names.get(dayNumber, "error")
+    for animal in animals:
+        if animal == 'cat':
+            print(txt_cat)
+        elif animal == 'bear':
+            print(txt_bear)
+        elif animal == 'bat':
+            print(txt_bat)
+        else:
+            print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
 
-print(WeekDayInFrench(2))
+    return
+
+PrintAnimal('cat','bat')
+print('-------------------------------------')
+PrintAnimal('cat','bat','dog','bear')
+print('-------------------------------------')
+
+#2
+
+from datetime import date
+
+def DaysToEndOfYear(*dates):
+    for date_today in dates:
+        date_end_year = date(date_today.year, 12, 31)
+        delta = date_end_year - date_today
+        print('Date', date_today, 'days to end of year', delta.days)
+
+
+DaysToEndOfYear(date(1999, 1, 15))
+print('----------------')
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15))
+print('----------------')
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15), date(2019, 1, 15))
+print('----------------')
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15), date(2019, 1, 15), date.today())

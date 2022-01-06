@@ -1,34 +1,42 @@
-def GiveWorkingDay():
-    #prints the nearest working day
-    from datetime import date
-    from datetime import timedelta
+#!/usr/bin/python3
 
-    day = date.today()
-    #day = date(2020,3,29)
-
-    if day.weekday() == 5:
-        workingday = day + timedelta(days=2)
-    elif day.weekday() == 6:
-        workingday = day + timedelta(days=1)
-    else:
-        workingday = day
-
-    print('working day for',day,'is',workingday)
+def PrintCat():
+    # this function prints a cat ascii-art
+    txt = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    print(txt)
     return
 
-GiveWorkingDay()
 
-def DayToNewYear():
-    from datetime import date
-    from datetime import timedelta
-
-    today = date.today()
-    current_year = today.year
-    end_year = date(current_year, 12, 31)
-    delta = end_year - today
-    print(delta.days)
+def PrintBear():
+    # this function prints a bear ascii-art
+    txt = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    print(txt)
     return
 
-DayToNewYear()
 
-    
+def PrintBat():
+    # this function prints a bat ascii-art
+    txt = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
+    print(txt)
+    return
+
+
+PrintCat()
+PrintBear()
+PrintBat()
