@@ -1,16 +1,20 @@
-filename = 'c:\\temp\\output.txt'
+#!/usr/bin/python3
+'''Pharma A, Vitamin C,100
+Drugstore XYZ,Penicilin, 20, pills
+Drugstore ABC,Aspirin,60
+Pharma X,Montelukast,10'''
 
-line = 'Europe'
+file_path = r'd:\Python\Udemy_Python_dla_poczatkujacych\orders.csv'
+with open(file_path, 'r') as file:
+    for line in file:
+        line = line.replace('\n', '')
+        order = line.split(',')
+        #print(line)
 
-cities = ['London','Berlin','Paris','Warsaw','Madrit','Rome']
+        if order == 3:
+            print('Order from drugstore "%s", item "%s", amount %s' %
+                  (order[0], order[1], order[2]))
+        else:
+            print("Line %s malformed!!" % line)
 
-file = open(filename, 'w+')
-
-file.write(line)
-file.write("\n")
-#file.writelines(cities)
-
-for city in cities:
-    file.write(city+'\n')
-
-file.close()
+print("Process file ending")

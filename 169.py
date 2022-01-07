@@ -1,14 +1,21 @@
-import os
+#!/usr/bin/python3
 
-fileIsOk = False
+import os, time
 
-while not fileIsOk:
+dir = input("Give me path!")
+if os.path.isdir(dir):
+    print("%s must be a directory" % dir)
+else:
+    file = input("Give me a filename: ")
+    path = os.path.join(dir, file)
 
-    filename = input('Enter path to result file: ')
-
-    if os.path.isfile(filename):
-        break
+    if os.path.exists(path):
+        print("File do not exists!")
     else:
-        print("File name is not correct, try again")
+        print('displaying properties of file %s' % path)
 
-print("The results file is %s" % (filename))
+        print('Last modified date', time.localtime(os.path.getmtime(path)))
+        print('Size in bytes', os.path.getsize(path))
+
+        print('Current directory is: ', os.getcwd())
+        print('Relative path to the file is', os.path.relpath(path))

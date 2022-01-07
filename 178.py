@@ -1,15 +1,17 @@
-import sys
+#!/usr/bin/python3
+import os
 
-tasksPerPerson = 0
+webaddresses = []
+line = input('Enter web address like "www.python.org" or press ENTER to stop: ')
+while line != '':
+    webaddresses.append(line)
+    line = input('Enter web address like "www.python.org" or press ENTER to stop: ')
 
-try:
-    tasks = 32
-    personsStr = input('How many person are the team?')
-    persons = int(personsStr)
-
-    tasksPerPerson = tasks / persons
-
-except:
-    print("Somethin went wrong",sys.exc_info()[0])
-
-print("Every person shoud have around",tasksPerPerson, "tasks")
+print(webaddresses)
+dirname = os.getcwd()
+filename = input("Enter the file name (without directory): ")
+filepath = os.path.join(dirname, filename)
+file = open(filepath, 'w+')
+for webaddress in webaddresses:
+    file.write(webaddress + "\n")
+file.close()

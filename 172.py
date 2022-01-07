@@ -1,35 +1,34 @@
-file = open("c:\\temp\\joke.txt","r")
+#!/usr/bin/python3
 
-content = file.read()
-print(content)
+import datetime
+import os
 
-file.close()
+data_input_catalog = r'd:\Python\Udemy_Python_dla_poczatkujacych\data_input'
+data_output_catalog = r'd:\Python\Udemy_Python_dla_poczatkujacych\data_output'
 
-with open("c:\\temp\\joke.txt","r") as file:
-    content = file.read()
-    print(content)
+today = datetime.date.today()
+today_output_catalog = os.path.join(data_output_catalog, today.strftime("%Y-%m-%d"))
 
+# checking conflicts
+# input folder must exist
+is_input_catalog_ok = os.path.isdir(data_input_catalog)
 
-with open("c:\\temp\\joke.txt","r") as file:
-    for line in file:
-        print(line)
+# output folder must exist
+is_output_catalog_ok = os.path.isdir(data_output_catalog)
 
+# today output catalog cannot exist
+is_today_output_catalog_ok = not (os.path.isdir(today_output_catalog)) and \
+                             not (os.path.isfile(today_output_catalog))
 
-file = open("c:\\temp\\joke.txt","r")
-for line in file:
-    print(line)
-file.close()
+if is_input_catalog_ok and is_output_catalog_ok and is_today_output_catalog_ok:
+    print('Conditions met! We can continue!')
+else:
+    print('Prerequisites not met! Check the paths!')
 
-file = open("c:\\temp\\joke.txt","r")
-for line in file.readlines():
-    print(line)
-file.close()
-
-file = open("c:\\temp\\joke.txt","r")
-
-fragment = file.read(10)
-while fragment:
-    print(fragment)
-    fragment = file.read(10)
-
-file.close()
+    # display detailed error conditions
+    if not is_input_catalog_ok:
+        print("Input catalog %s must exist!" % data_input_catalog)
+    if not is_output_catalog_ok:
+        print("Output catalog %s must exist!" % data_output_catalog)
+    if not is_today_output_catalog_ok:
+        print("Today's output %s cannot exist (neither as file nor as directory)!" % today_output_catalog)

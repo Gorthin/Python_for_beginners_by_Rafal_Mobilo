@@ -1,26 +1,34 @@
+#!/usr/bin/python3
+
+'''Pharma A, Vitamin C,100
+Drugstore XYZ,Penicilin, 20, pills
+Drugstore ABC,Aspirin,60
+Pharma X,Montelukast,10
+Pharma at grocery,Amoxicillin,?
+Pharmacy 123,Cephalexin,100
+Pharmacy 123,Prednisolone Sodium Phosphate
+Pharma X,Nystatin,45'''
+
 import sys
+file_path = r'd:\Python\Udemy_Python_dla_poczatkujacych\orders.csv'
 
-tasksPerPerson = 0
+with open(file_path, "r") as file:
+    for line in file:
+        line = line.replace('\n', '')
+        order = line.split(',')
+        try:
+            pharmacy_name = order[0]
+            item = order[1]
+            amount = int(order[2])
+            print('Order from drugstore "%s", item "%s", amount %d' % (pharmacy_name, item, amount))
 
-try:
-    tasks = 32
-    personsStr = input('How many person are the team?')
-    persons = int(personsStr)
+        except ValueError as e:
+            print("Problem with conversion. Check whether the amount is correct. Line: %s" % line)
 
-    tasksPerPerson = tasks / persons
+        except IndexError as e:
+            print("Missing information. Check whether the line is build of at least 3 fields separated by comma. Line: %s" % line)
 
-except ValueError as e:
-    print('Sorry tou need to enter a integer number',e)
+        except:
+            print("General error: %s" % sys.exc_info()[0])
 
-except ZeroDivisionError as e:
-    print('Do not enter value 0',e)
-
-except:
-    print("Somethin went wrong",sys.exc_info()[0])
-    
-else:
-    print("Every person shoud have around",tasksPerPerson, "tasks")
-
-finally:
-    print('Script finished with/without errors')
-    
+print("Processing finished")
